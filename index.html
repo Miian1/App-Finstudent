@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>FinStudent - Modern Finance Tracker</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0F172A" />
+    
+    <!-- Local style.css for true offline support -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Critical Inline Styles for Instant Load -->
+    <style>
+      :root { 
+        --navy-900: #0F172A; 
+        --offwhite: #F8FAFC; 
+      }
+      body { 
+        margin: 0; 
+        background-color: var(--navy-900); 
+        color: white; 
+      }
+      #root:empty { display: none; }
+
+      /* Force hide scrollbars globally */
+      * {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+      *::-webkit-scrollbar {
+        display: none !important;
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              navy: { 900: '#0F172A', 800: '#1E293B', 700: '#334155' },
+              offwhite: '#F8FAFC',
+              neonBlue: '#38BDF8',
+              softOrange: '#FB923C',
+            },
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'sans-serif'],
+              display: ['-apple-system', 'sans-serif'],
+            },
+            borderRadius: { 'card': '20px' }
+          }
+        }
+      }
+    </script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "@capacitor/cli": "https://esm.sh/@capacitor/cli@^8.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-offwhite dark:bg-navy-900 transition-colors duration-300">
+    <div id="root"></div>
+    <script>
+      // Global flag to check if external styles are available
+      window.isTailwindLoaded = typeof tailwind !== 'undefined';
+      
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').catch(err => {
+            console.log('SW registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "FinStudent",
+  "description": "A calm, modern, student-friendly finance tracker designed to help you understand your money in 5 seconds.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
