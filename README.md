@@ -1,20 +1,6 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Mian Khizar's FinStudent AI App
+This repository contains everything needed to run and deploy your AI-powered financial education application.
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1FJaMKu-LyQweyH6sgXACc1JIjSUHr0xy
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+<div align="center"> <img width="1200" height="475" alt="FinStudent AI App Banner" src="https://i.ibb.co/d4FMcxT9/finstudent.png" /> </div>
+About This Project
+FinStudent AI - An intelligent financial education platform developed by Mian Khizar using Google AI Studio. This app provides personalized financial learning and guidance powered by Google's Gemini models, helping students master financial literacy through AI-powered assistance.
